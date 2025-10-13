@@ -1,0 +1,23 @@
+{% extends 'base.html' %} <!--THIS WILL EXTENDS THE base.html SO THAT I CAN JUST REUSE EVERYTHING-->
+
+{% block title%} Home {% endblock%} 
+
+{% block content%}
+<!--
+        <h1>HOME</h1>
+        <p>(live scrolling banner: latest news)</p>
+        <p>(left side: weather )</p>
+        <p>(below banner: other local news)</p>-->
+
+    <div class="main-container">
+        <div class="news_box">
+            <p>news box</p>
+        </div>
+         <div class="weather_box">
+            <p>weather box</p>
+        </div>
+         <div class="other_news_box">
+            <p>other news box</p>
+        </div>
+    </div>
+{% endblock %}
