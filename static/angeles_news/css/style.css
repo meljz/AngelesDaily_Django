@@ -15,10 +15,11 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     overflow: hidden;
+
 }
 
 header {
-    background-color: #333;
+    background-color: #31326F;
     color: #fff;
     padding: 10px 0;
 }
@@ -52,7 +53,7 @@ nav {
 }
 
 .nav-links li a:hover {
-    background-color: #555;
+    background-color: #31326F;
 }
 .content {
   margin: 0;
@@ -104,4 +105,29 @@ nav {
   outline: 2px solid red;
   padding: 10px;
   background-color: lightcoral;
+}
+/*=============ABOUT PAGE==================*/
+ .container .about {
+      /*background-image: url('../images/angeles.jpg');*/
+      background-color: #31326F;
+      max-width: 100vh;
+      margin: 150px auto;
+      background: #12658b;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(224, 115, 115, 0.05);
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+.container .about h1 {
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.about p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #ffffff;
 }

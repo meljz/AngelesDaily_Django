@@ -1,0 +1,17 @@
+{% extends 'base.html' %} <!--THIS WILL EXTENDS THE base.html SO THAT I CAN JUST REUSE EVERYTHING-->
+
+{% block title%} Articles_details {% endblock%} 
+
+{% block content%}
+    <div class="news-container">
+        <h1>📰 Angeles Daily News</h1>
+        <div class="news-grid">
+            <div class="news-card">
+                <h2>{{ articles.article_title }}</h2>
+                <p>{{ articles.article_story }}</p>
+                <span class="date">{{ article.created_at|date:"F j, Y" }}</span>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+

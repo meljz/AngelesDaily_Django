@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="news-container">
+  <h1>📰 Latest News</h1>
+  {% if articles %}
+    <div class="news-grid">
+      {% for article in articles %}
+        <div class="news-card">
+          <h2>{{ article.title }}</h2>
+          <p>{{ article.summary }}</p>
+          <a href="{% url 'articles_detail' article.pk %}">Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p>No news articles available yet.</p>
+  {% endif %}
+</div>
+{% endblock %}
