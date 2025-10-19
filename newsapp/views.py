@@ -2,7 +2,6 @@ from django.shortcuts import get_object_or_404, render
 from newsapp.models import Articles
 
 
-# Create your views here.
 def Articles_detail(request, pk):
     articles = get_object_or_404 (Articles, pk=pk)
     context = {

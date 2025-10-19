@@ -3,12 +3,20 @@
 {% block title%} Articles_details {% endblock%} 
 
 {% block content%}
-    <div class="news-container">
+    <div class="news-container-within">
         <h1>📰 Angeles Daily News</h1>
         <div class="news-grid">
             <div class="news-card">
                 <h2>{{ articles.article_title }}</h2>
+
+                <div id="image_wrapper"> <!--THIS IS FOR THE IMAGE -->
+                    {% if articles.article_image %}
+                        <img src = "{{ articles.article_image.url }}" id="news_image_id"alt ="news_image">
+                    {% endif %}
+                </div>
+
                 <p>{{ articles.article_story }}</p>
+
                 <span class="date">{{ article.created_at|date:"F j, Y" }}</span>
             </div>
         </div>
