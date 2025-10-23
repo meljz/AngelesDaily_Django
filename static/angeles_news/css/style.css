@@ -57,7 +57,7 @@ nav {
     background-color: #31326F;
 }
 .content {
-  margin-top: 40px;
+  margin-top: 10px;
   padding: 0;
   width: 100vw;
   max-width: none;
@@ -94,9 +94,30 @@ nav {
   grid-area: weather;
   width:500px;
   height: 684px;
-  outline: 2px solid red;
+  border-radius: 20px;
+  /*outline: 2px solid red;*/
   padding: 10px;
-  background-color: lightgreen;
+  background-color: transparent;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 20px;
+   box-shadow: inset 4px 4px 6px rgba(19, 19, 19, 0.4);
+}
+
+.weather_box p{
+  padding-top: 20px;
+}
+
+/* this is hover effect for weather box for some animation */
+/* when hovered image will be set (chjange this pangit)*/
+.weather_box:hover {
+  background-image: url(../images/angeles.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.6;
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
 }
 
 .other_news_box {

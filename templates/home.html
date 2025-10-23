@@ -13,9 +13,18 @@
         <div class="news_box">
             <h1>Daily News</h1>
         </div>
+
+        {% if weather %}           <!-- this if else checks if there is weather-->
          <div class="weather_box">
-            <h1>weather box</h1>
+            <h2>What is the weather in:<br> {{ weather.city }}</h2>                       <!-- weather.xxxx came from views.py project level-->
+            <p> {{weather.temperature}}C - {{ weather.description}}f</p> <!-- weather.xxxx came from views.py project level-->
+            
+            <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather icon"> <!-- simple weather image-->
         </div>
+        {% else %}
+            <p>Weather data not available.</p> <!-- this will fire when there is no weather   -->
+        {% endif %}
+
          <div class="other_news_box">
             <h1>other news box</h1>
         </div>
