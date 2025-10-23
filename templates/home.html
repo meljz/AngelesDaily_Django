@@ -1,5 +1,6 @@
 {% extends 'base.html' %} <!--THIS WILL EXTENDS THE base.html SO THAT I CAN JUST REUSE EVERYTHING-->
-
+{% include 'articles_list.html' %}
+{% load static %}
 {% block title%} Home {% endblock%} 
 
 {% block content%}
@@ -9,13 +10,33 @@
         <p>(left side: weather )</p>
         <p>(below banner: other local news)</p>-->
 
-    <div class="main-container">
-        <div class="news_box">
-            <h1>Daily News</h1>
+    <div class="main-container"> <!--MAIN CONTAINER-->
+        <div class="news_box">   <!--news container inside main container-->
+            <h2>Daily News</h2>
+            {% if articles %}
+                <div class="carousel">
+                <button class="prev">back</button>
+                    <div class="carousel-track">
+                        {% for article in articles %}
+                        <div class="carousel-slide"> <!--carousel EACH items start-->
+                            <a href="{% url 'articles_detail' article.pk %}" class ="carousel-title"> {{ article.article_title }} </a>
+                            {% if article.article_image %}
+                                <img src = "{{ article.article_image.url }}"alt ="news_image" class="carousel-thumbnail">
+                            {% else %}
+                                <img src="{% static 'images/default-thumbnail.jpg' %}" alt="No Image Available" class="carousel-thumbnail">
+                            {% endif %}    
+                        </div>                       <!--carousel EACH items end-->
+                        {% endfor %}
+                    </div>
+                    <button class="next">next</button>
+                </div>
+            {% else %}
+                <p>No news articles available yet.</p>
+            {% endif %}
         </div>
 
         {% if weather %}           <!-- this if else checks if there is weather-->
-         <div class="weather_box">
+         <div class="weather_box">  <!--weather's container inside main container-->
             <h2>What is the weather in:<br> {{ weather.city }}</h2>                       <!-- weather.xxxx came from views.py project level-->
             <p> {{weather.temperature}}C - {{ weather.description}}f</p> <!-- weather.xxxx came from views.py project level-->
             
@@ -25,8 +46,10 @@
             <p>Weather data not available.</p> <!-- this will fire when there is no weather   -->
         {% endif %}
 
-         <div class="other_news_box">
+         <div class="other_news_box">  <!--other news container inside main container-->
             <h1>other news box</h1>
         </div>
     </div>
+
+
 {% endblock %}
