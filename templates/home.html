@@ -10,6 +10,22 @@
         <p>(left side: weather )</p>
         <p>(below banner: other local news)</p>-->
 
+    <div class = "marquee">
+        <div class ="marquee_track">
+            {% for article in articles %}
+            <div class = "marquee_items">
+                    <p>{{ article.article_title }}  </p>
+            </div>
+            {% endfor %}
+
+            {% for article in articles %}
+            <div class = "marquee_items">
+                    <p>{{ article.article_title }}  </p>
+            </div>
+            {% endfor %}
+        </div>    
+    </div>
+
     <div class="main-container"> <!--MAIN CONTAINER-->
         <div class="news_box">   <!--news container inside main container-->
             <h2>Daily News</h2>
