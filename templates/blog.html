@@ -1,0 +1,22 @@
+{% extends 'base.html' %} <!--THIS WILL EXTENDS THE base.html SO THAT I CAN JUST REUSE EVERYTHING-->
+
+{% block title%} Blog {% endblock%} 
+
+{% block content%}
+    <div class="blog_container">
+    <h1>Blogs</h1>
+        {% if blogs %}
+            <div class = "blog_grid">
+            {% for blog in  blogs%}
+                <div class="blog_news_card">
+                    <h2>{{ blog.title }}</h2>
+                    <p>{{ blog.story }}</p>
+                    <a href="{% url 'blog_detail' blog.pk %}">Blog Article</a>
+                </div>
+            {% endfor %}
+            </div>
+        {% else %}
+            <p>No new blogs</p>
+        {% endif %}
+    </div>
+{% endblock %}

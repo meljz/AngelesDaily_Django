@@ -10,3 +10,13 @@ class Articles (models.Model):
 
     def __str__ (self):                 # this will set the proper names in the list of admin panel
         return self.article_title
+    
+class Blogs (models.Model):
+    blog_title = models.CharField (max_length=100) 
+    blog_image = models.ImageField (upload_to="my_images", blank=True, null=True)
+    blog_story = models.TextField()
+    created_at =  models.DateTimeField (auto_now_add=True)
+
+    def __str__ (self):                 # this will set the proper names in the list of admin panel
+        return self.blog_title
+    

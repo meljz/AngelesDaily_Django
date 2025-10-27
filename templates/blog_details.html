@@ -1,0 +1,25 @@
+{% extends 'base.html' %} <!--THIS WILL EXTENDS THE base.html SO THAT I CAN JUST REUSE EVERYTHING-->
+
+{% block title%} blog_details {% endblock%} 
+
+{% block content%}
+    <div class="blog-container-within">
+        <h1>The Angeles Daily - Blog </h1>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h2>{{ blogs.blog_title }}</h2>
+
+                <div id="blog_image_wrapper"> <!--THIS IS FOR THE IMAGE -->
+                    {% if blogs.blog_image %}
+                        <img src = "{{ blogs.blog_image.url }}" id="blog_image_id"alt ="blog_image">
+                    {% endif %}
+                </div>
+                <div class="blog_text">
+                    <p>{{ blogs.blog_story }}</p>
+                </div>
+                <span class="date"><strong>{{ blogs.created_at|date:"F j, Y" }}</strong></span>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+

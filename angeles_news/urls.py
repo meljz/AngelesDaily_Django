@@ -25,7 +25,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
     path('about/', views.about, name="about"),  # this tells to get about functuin via views.py 
-    path ('newsapp/', include('newsapp.urls')), # this tells the app that include all urls in the newsapp app
+    path ('', include('newsapp.urls')), # this tells the app that include all urls in the newsapp app
+
 ]
 
 if settings.DEBUG:
