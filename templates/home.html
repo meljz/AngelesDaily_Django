@@ -10,23 +10,27 @@
         <p>(left side: weather )</p>
         <p>(below banner: other local news)</p>-->
 
-    <div class = "marquee">
-        <div class ="marquee_track">
-            {% for article in articles %}
-            <div class = "marquee_items">
-                    <p>{{ article.article_title }}  </p>
-            </div>
-            {% endfor %}
-
-            {% for article in articles %}
-            <div class = "marquee_items">
-                    <p>{{ article.article_title }}  </p>
-            </div>
-            {% endfor %}
-        </div>    
-    </div>
+    
 
     <div class="main-container"> <!--MAIN CONTAINER-->
+    <div class ="marquee_place">
+        <div class = "marquee">
+            <div class ="marquee_track">
+                {% for article in articles %}
+                <div class = "marquee_items">
+                        <p>{{ article.article_title }}  </p>
+                </div>
+                {% endfor %}
+
+                {% for article in articles %}
+                <div class = "marquee_items">
+                        <p>{{ article.article_title }}  </p>
+                </div>
+                {% endfor %}
+            </div>    
+        </div>
+    </div>
+    <div class="news_weather_box">
         <div class="news_box">   <!--news container inside main container-->
             <h2>Daily News</h2>
             {% if articles %}
@@ -62,9 +66,10 @@
             <p>Weather data not available.</p> <!-- this will fire when there is no weather   -->
         {% endif %}
 
-         <div class="other_news_box">  <!--other news container inside main container-->
+         <!--<div class="other_news_box"> 
             <h1>other news box</h1>
-        </div>
+        </div>-->
+    
     </div>
 
 
