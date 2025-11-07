@@ -1,21 +1,31 @@
+// ========== CAROUSEL (only on home page) ==========
 const track = document.querySelector('.carousel-track');
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+
+// Check: Do these elements exist?
+if (track && nextBtn && prevBtn) {
+    let index = 0;
+
+    nextBtn.onclick = () => {
+        index = (index + 1) % document.querySelectorAll('.carousel-slide').length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    prevBtn.onclick = () => {
         const slides = document.querySelectorAll('.carousel-slide');
-        let index = 0;
+        index = (index - 1 + slides.length) % slides.length;
+        track.style.transform = `translateX(-${index * 100}%)`;
+    };
+}
 
-        document.querySelector('.next').onclick = () => {
-            index = (index + 1) % slides.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        };
-
-        document.querySelector('.prev').onclick = () => {
-            index = (index - 1 + slides.length) % slides.length;
-            track.style.transform = `translateX(-${index * 100}%)`;
-        };
-/*this will serve as the DOM of the burger, without this burger will not be clickable */
+// ========== BURGER MENU (on all pages) ==========
 const burger = document.querySelector('.burger_menu');
-  const navLinks = document.querySelector('.nav-links');
+const navLinks = document.querySelector('.nav-links');
 
-  burger?.addEventListener('click', () => {
-    navLinks?.classList.toggle('active');
-  });
-        
+// Check: Do these elements exist?
+if (burger && navLinks) {
+    burger.onclick = () => {
+        navLinks.classList.toggle('active');
+    };
+}

@@ -107,10 +107,10 @@ nav {
     background-color: #31326F;
 }
 .content {
-  margin-top: 10px;
+  margin: 10px 0;
   padding: 0;
   width: 100%;
-  max-width:auto;
+
   height: auto;
   outline: 3px solid pink;
 }
@@ -305,11 +305,23 @@ button.next { right: 10px; }
   background-color: transparent;
 }
 /*=============ABOUT PAGE==================*/
- .container .about {
+.about_container {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  max-width: none;
+   height: 85vh;
+   outline: 4px solid limegreen;
+}
+
+
+ .about {
       /*background-image: url('../images/angeles.jpg');*/
       background-color: #31326F;
-      max-width: 100vh;
-      margin: 150px auto;
+      width: 60%;
+      height: auto;
+      justify-items: center;
+      margin: 0 auto;
       background: #12658b;
       padding: 2rem;
       border-radius: 10px;
@@ -416,24 +428,62 @@ background-color: orange;
     outline: 2px solid beige;
     gap: 10px;
 }
-.burger_menu .line {
-    width: 100px;
-    height: 5px;
-    padding: 5px;
-    outline: 2px solid orange;
 
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 20px; 
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  gap: 1rem;
+  width: 90%;
+  outline: 2px solid limegreen;
+  text-align: right;
 }
-  .nav-links{
-    display: none;
-    flex-direction: column;
-  }
+
+.nav-links li {
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+.nav-links li:hover {
+  background-color: #9e9fe0;
+}
+
+.nav-links li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    font-size: .9em;
+}
 
   .nav-links.active{
     display: flex;
+    width: 90%;
+    height: auto;
+    outline: 2px solid red;
+    gap: 1px;
+    
+
   }
+
   .burger_menu{
     display: flex;
   }
+
+
+.burger_menu .line {
+        width: 80px;
+        height: 10px;
+        padding: 3px;
+}
 
 .main-container {
     padding:10px;
@@ -454,5 +504,130 @@ background-color: orange;
   background-color: transparent;
   outline: 2px solid #12658b;
 }
-  
+ 
+#news_image_id {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
+}
+
+@media screen and (max-width: 500px){
+  .nav_container{
+  display: flex;
+  width: 100%;
+  height: 60px;
+   justify-content: center;
+   align-items: center; /* vertically aligns logo and nav */
+  padding: 10px 15px;
+  outline: 2px solid beige;
+  gap: 10px;
+}
+.nav_logo {
+  position: absolute;
+  left: 15px; /* anchors logo to the left */
+  font-size: 1em;
+  font-weight: bold;
+  color: rgb(255, 254, 246);
+}
+nav {
+    text-align: center;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 10px; /* below navbar */
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  gap: 1rem;
+  width: 75%;
+  outline: 2px solid limegreen;
+  text-align: right;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin: 5px;
+    text-align: center;
+    border: 1px solid black;
+}
+.nav-links li:hover {
+  background-color: #9e9fe0;
+}
+
+.nav-links li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 5px 5px;
+    display: inline-block;
+    transition: background-color 0.3s;
+    font-size: .9em;
+}
+
+  .nav-links.active{
+    display: flex;
+    width: 90%;
+    height: auto;
+    outline: 2px solid red;
+    gap: 1px;
+    
+
+  }
+
+  .burger_menu{
+    display: flex;
+  }
+
+
+.burger_menu .line {
+        width: 50px;
+        height: 5px;
+        padding: 3px;
+}
+
+.about_container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+    height: auto;
+    outline: 4px solid limegreen;
+}
+
+.about h1{
+  font-size: 1em;
+}
+
+.about p{
+  font-size: .6em;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    line-height: 2;
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    text-align: center;
+}
+
+.footer p {
+  font-size: .7em;
+}
+.blog-container-within {
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border: 3px solid #ff0000;
+}
+}
+
+
