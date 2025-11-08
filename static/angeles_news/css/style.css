@@ -396,13 +396,19 @@ button.next { right: 10px; }
   text-align: center;
   margin: 50px 30px;
   padding: 1rem;
-  max-height: auto;  /* or whatever fits your layout */
-  border: 3px solid #ff0000;        /* enables vertical scroll */
+  max-height: auto;   
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .blog_text {
+  width: 80%;
+  height: auto;
   line-height: 50px;
   margin: 0 100px;
+
+}
+.blog_text p{
+  font-size: .9em;
 
 }
 
@@ -635,7 +641,7 @@ nav {
     text-align: center;
     margin: 0 auto;
     padding: 20px;
-    border: 3px solid #ff0000;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 }
 
