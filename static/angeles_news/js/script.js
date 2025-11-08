@@ -20,6 +20,12 @@ if (track && nextBtn && prevBtn) {
 }
 
 // ========== BURGER MENU (on all pages) ==========
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
 const burger = document.querySelector('.burger_menu');
 const navLinks = document.querySelector('.nav-links');
 
